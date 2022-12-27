@@ -6,6 +6,8 @@ import {
   Image,
   Text,
   TouchableOpacity,
+  TouchableWithoutFeedback,
+  Keyboard,
 
 } from 'react-native';
 
@@ -22,48 +24,47 @@ export function Login() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <View style={styles.content}>
 
-        <Image 
-          style={styles.image}
-          source={Abacate}
-          resizeMode="contain"
-        />
+            <Image 
+              style={styles.image}
+              source={Abacate}
+              resizeMode="contain"
+            />
 
-        <Text style={styles.title}>Faça seu login para{'\n'}
-        começar</Text>
+            <Text style={styles.title}>Faça seu login para{'\n'}
+            começar</Text>
 
-        
-        <View style={styles.inputEmail}>
-          <TextInputBox title='Email' value={email} onChangeText={text => setEmail(text)}/>
-        </View>
+            
+            <View style={styles.inputEmail}>
+              <TextInputBox title='Email' value={email} onChangeText={text => setEmail(text)}/>
+            </View>
 
-        <View style={styles.inputSenha}>
-          <TextInputBox title='Senha' secureTextEntry={true} value={senha} onChangeText={text => setSenha(text)}/>
-        </View>
+            <View style={styles.inputSenha}>
+              <TextInputBox title='Senha' secureTextEntry={true} value={senha} onChangeText={text => setSenha(text)}/>
+            </View>
 
-        <TouchableOpacity style={styles.ButtonLogin} onPress={()=> console.log(email)}>
-          <Text style={styles.textButtonLogin}>
-            Entrar
-          </Text>
-        </TouchableOpacity>
+            <TouchableOpacity style={styles.ButtonLogin} onPress={()=> console.log(email)}>
+              <Text style={styles.textButtonLogin}>
+                Entrar
+              </Text>
+            </TouchableOpacity>
 
-        <TouchableOpacity style={styles.ButtonCadastro}>
-          <Text style={styles.TextButtonCadastro}>
-            Criar conta
-          </Text>
-        </TouchableOpacity>
+            <TouchableOpacity style={styles.ButtonCadastro}>
+              <Text style={styles.TextButtonCadastro}>
+                Criar conta
+              </Text>
+            </TouchableOpacity>
 
-        <TouchableOpacity style={styles.ButtonAlterarSenha}>
-          <Text style={styles.TextButtonAlterarSenha}>
-            Esqueci minha senha
-          </Text>
-        </TouchableOpacity>
+            <TouchableOpacity style={styles.ButtonAlterarSenha}>
+              <Text style={styles.TextButtonAlterarSenha}>
+                Esqueci minha senha
+              </Text>
+            </TouchableOpacity>
 
-      </View>
-
-      
-      
+          </View>
+        </TouchableWithoutFeedback>
     </SafeAreaView>
     
   );
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
   },
   title:{
     fontSize:34,
-    // fontFamily: fonts.headingN,
+    fontFamily: fonts.headingN,
     marginTop: 40,
 
   },
@@ -99,6 +100,7 @@ const styles = StyleSheet.create({
     width: '100%'
   },
   ButtonLogin: {
+  
     marginTop: 32,
     width: '100%',
     height: 53,
@@ -126,18 +128,21 @@ const styles = StyleSheet.create({
 
   },
   TextButtonCadastro:{
+    fontFamily: fonts.headingN,
     fontSize: 20,
     fontWeight: '700',
     color: colors.green
 
   },
   textButtonLogin:{
+    fontFamily: fonts.headingN,
     fontSize: 20,
     fontWeight: '700',
     color: colors.background
 
   },
   TextButtonAlterarSenha:{
+    fontFamily: fonts.text,
     fontSize: 16,
     lineHeight: 27,
   },

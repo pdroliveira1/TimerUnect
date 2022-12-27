@@ -11,6 +11,7 @@ import {
 
 import {Ionicons} from '@expo/vector-icons' 
 import colors from '../style/colors';
+import fonts from '../style/fonts';
 
 interface InputProps extends TextInputProps{
   title: string;
@@ -60,7 +61,8 @@ const styles = StyleSheet.create({
     borderColor: colors.green,
     borderStyle: 'solid',
     borderRadius: 10,
-    
+    fontFamily: fonts.headingO,
+    fontSize: 18
   },
   icon:{
     position: 'absolute',
