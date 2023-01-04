@@ -15,6 +15,7 @@ import  {
   OpenSans_700Bold,
   useFonts,
 } from '@expo-google-fonts/open-sans';
+import { Cadastro } from './src/pages/Cadastro';
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -53,7 +54,7 @@ export default function App() {
 
   return (
     <View onLayout={onLayout}>
-      <Login/>
+      <Cadastro/>
     </View>
   );
 }
