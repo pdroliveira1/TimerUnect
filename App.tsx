@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { Login } from './src/pages/Login';
+import { Cadastro } from './src/pages/Cadastro';
+import { Principal } from './src/pages/Principal';
 import * as SplashScreen from 'expo-splash-screen'
 import * as Font from 'expo-font'
 import {
@@ -15,7 +17,7 @@ import  {
   OpenSans_700Bold,
   useFonts,
 } from '@expo-google-fonts/open-sans';
-import { Cadastro } from './src/pages/Cadastro';
+
 
 export default function App() {
   const [appIsReady, setAppIsReady] = useState(false);
@@ -54,7 +56,7 @@ export default function App() {
 
   return (
     <View onLayout={onLayout}>
-      <Cadastro/>
+      <Principal/>
     </View>
   );
 }
